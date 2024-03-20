@@ -29,10 +29,14 @@ function generateTheme(vars, fileName) {
   });
 }
 
+// function generateAllTheme() {
+//   return generateTheme(compactPaletteLess, 'compact.css')
+//     .then(() => generateTheme(darkPaletteLess, 'dark.css'))
+//     .then(() => generateTheme(aliyunPaletteLess, 'aliyun.css'));
+// }
+
 function generateAllTheme() {
-  return generateTheme(compactPaletteLess, 'compact.css')
-    .then(() => generateTheme(darkPaletteLess, 'dark.css'))
-    .then(() => generateTheme(aliyunPaletteLess, 'aliyun.css'));
+  return Promise.resolve()
 }
 
 if (require.main === module) {

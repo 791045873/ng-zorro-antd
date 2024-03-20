@@ -10,7 +10,7 @@ import { moduleList } from './module';
     ShareModule,
     ...moduleList,
     RouterModule.forChild([
-      { path: 'en', component: NzDemo{{component}}EnComponent },
+      // { path: 'en', component: NzDemo{{component}}EnComponent },
       { path: 'zh', component: NzDemo{{component}}ZhComponent }
     ])
   ],

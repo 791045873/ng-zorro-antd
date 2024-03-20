@@ -74,7 +74,7 @@ const RESPONSIVE_SM = 1200;
             [(language)]="language"
             (languageChange)="onChangeLanguage($event)"
           ></ul>
-          <nz-select
+          <!-- <nz-select
             nzSize="small"
             class="version"
             style="max-width: 126px;"
@@ -83,15 +83,15 @@ const RESPONSIVE_SM = 1200;
           >
             <nz-option [nzLabel]="currentVersion" [nzValue]="currentVersion"></nz-option>
             <nz-option *ngFor="let version of oldVersionList" [nzLabel]="version" [nzValue]="version"></nz-option>
-          </nz-select>
-          <button
+          </nz-select> -->
+          <!-- <button
             nz-button
             nzSize="small"
             class="header-button header-lang-butto"
             (click)="onChangeLanguage(language === 'zh' ? 'en' : 'zh')"
           >
             {{ language == 'zh' ? 'English' : '中文' }}
-          </button>
+          </button> -->
           <button
             nz-button
             nzGhost

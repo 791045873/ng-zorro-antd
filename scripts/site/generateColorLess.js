@@ -1,6 +1,10 @@
 #!/usr/bin/env node
 const path = require('path');
-const { generateTheme } = require('antd-theme-generator');
+// const { generateTheme } = require('antd-theme-generator');
+
+function generateTheme(){
+  return Promise.resolve()
+}
 
 const options = {
   stylesDir: path.join(__dirname, '../../site/doc/'),

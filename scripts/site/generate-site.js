@@ -90,14 +90,15 @@ function generate(target) {
               capitalizeFirstLetter(nameKey)
             )}Component`;
             // 根据模版文件生成codebox代码
-            demoMap[nameKey]['enCode'] = generateCodeBox(
-              componentName,
-              demoMap[nameKey]['name'],
-              nameKey,
-              demoMap[nameKey].meta.title['en-US'],
-              demoMap[nameKey].en,
-              demoMap[nameKey].meta.iframe
-            );
+            // 当前不需要双语，故屏蔽所有英语相关内容
+            // demoMap[nameKey]['enCode'] = generateCodeBox(
+            //   componentName,
+            //   demoMap[nameKey]['name'],
+            //   nameKey,
+            //   demoMap[nameKey].meta.title['en-US'],
+            //   demoMap[nameKey].en,
+            //   demoMap[nameKey].meta.iframe
+            // );
             demoMap[nameKey]['zhCode'] = generateCodeBox(
               componentName,
               demoMap[nameKey]['name'],
@@ -132,7 +133,7 @@ function generate(target) {
       if (fs.existsSync(pageDirPath)) {
         const pageDir = fs.readdirSync(pageDirPath);
         let zhLocale = '';
-        let enLocale = '';
+        // let enLocale = '';
         pageDemo = {};
         pageDir.forEach(file => {
           if (/.ts$/.test(file)) {
@@ -141,11 +142,11 @@ function generate(target) {
           if (/^zh-CN.txt$/.test(file)) {
             zhLocale = String(fs.readFileSync(path.join(pageDirPath, file)));
           }
-          if (/^en-US.txt$/.test(file)) {
-            enLocale = String(fs.readFileSync(path.join(pageDirPath, file)));
-          }
+          // if (/^en-US.txt$/.test(file)) {
+          //   enLocale = String(fs.readFileSync(path.join(pageDirPath, file)));
+          // }
         });
-        pageDemo.enCode = pageDemo.raw.replace(/locale;/g, enLocale);
+        // pageDemo.enCode = pageDemo.raw.replace(/locale;/g, enLocale);
         pageDemo.zhCode = pageDemo.raw.replace(/locale;/g, zhLocale);
       }
 
@@ -156,14 +157,15 @@ function generate(target) {
           fs.readFileSync(path.join(componentDirPath, 'doc/index.zh-CN.md')),
           `components/${componentName}/doc/index.zh-CN.md`
         ),
-        docEn: parseDocMdUtil(
-          fs.readFileSync(path.join(componentDirPath, 'doc/index.en-US.md')),
-          `components/${componentName}/doc/index.en-US.md`
-        ),
+        // docEn: parseDocMdUtil(
+        //   fs.readFileSync(path.join(componentDirPath, 'doc/index.en-US.md')),
+        //   `components/${componentName}/doc/index.en-US.md`
+        // ),
         demoMap,
         pageDemo
       };
-      componentsDocMap[componentName] = { zh: result.docZh.meta, en: result.docEn.meta };
+      // componentsDocMap[componentName] = { zh: result.docZh.meta, en: result.docEn.meta };
+      componentsDocMap[componentName] = { zh: result.docZh.meta };
       componentsMap[componentName] = demoMap;
       generateDemo(showCaseComponentPath, result);
       generateDemoCodeFiles(result, showCasePath);
@@ -183,11 +185,11 @@ function generate(target) {
       const name = nameWithoutSuffixUtil(doc);
       docsMap[name] = {
         zh: fs.readFileSync(path.join(docsPath, `${name}.zh-CN.md`)),
-        en: fs.readFileSync(path.join(docsPath, `${name}.en-US.md`))
+        // en: fs.readFileSync(path.join(docsPath, `${name}.en-US.md`))
       };
       docsMeta[name] = {
         zh: getMeta(docsMap[name].zh),
-        en: getMeta(docsMap[name].en)
+        // en: getMeta(docsMap[name].en)
       };
     });
 

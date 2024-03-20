@@ -22,9 +22,9 @@ const CNMirrorSite = 'ng-zorro.gitee.io';
         <span>{{ language == 'zh' ? '实验性功能' : 'Experimental' }}</span>
       </a>
     </li>
-    <li *ngIf="showCNMirror && language == 'zh'" nz-menu-item [nzSelected]="false">
+    <!-- <li *ngIf="showCNMirror && language == 'zh'" nz-menu-item [nzSelected]="false">
       <a href="https://ng-zorro.gitee.io/">国内镜像</a>
-    </li>
+    </li> -->
     <ng-container *ngIf="!isMobile && responsive === 'crowded'">
       <li nz-submenu [nzTitle]="additionalTitle" nzMenuClassName="top-menu-additional">
         <ng-template #additionalTitle><span nz-icon nzType="unordered-list" nzTheme="outline"></span></ng-template>
@@ -37,12 +37,12 @@ const CNMirrorSite = 'ng-zorro.gitee.io';
       <ng-container [ngTemplateOutlet]="additionalItems"></ng-container>
     </ng-container>
     <ng-template #additionalItems>
-      <li nz-menu-item>
+      <!-- <li nz-menu-item>
         <a href="https://github.com/NG-ZORRO/ng-zorro-antd" target="_blank" rel="noopener noreferrer">Github</a>
-      </li>
-      <li nz-menu-item>
+      </li> -->
+      <!-- <li nz-menu-item>
         <a (click)="changeLanguage(language === 'zh' ? 'en' : 'zh', $event)">{{ language == 'zh' ? 'English' : '中文' }}</a>
-      </li>
+      </li> -->
     </ng-template>
   `,
   styles: [
