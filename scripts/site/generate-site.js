@@ -16,6 +16,10 @@ const arg = process.argv[2];
 // create site folder
 const showCasePath = path.resolve(__dirname, '../../site');
 
+/**
+ * _site/doc所指为scripts/site/_site/doc,_site下均为模版文件
+ * {{component}}/demo下的示例组件的selector命名规则为：nz-demo-{{component}}-{{key}}，key为对应demo的文件名
+ */
 function generate(target) {
   const isSyncSpecific = target && target !== 'init';
   if (!target) {
@@ -27,6 +31,7 @@ function generate(target) {
   } else {
     fs.removeSync(`${showCasePath}/doc/app/${target}`);
   }
+
   const showCaseTargetPath = `${showCasePath}/doc/app/`;
   const iframeTargetPath = `${showCasePath}/iframe/app/`;
   // read components folder
@@ -34,7 +39,9 @@ function generate(target) {
   const rootDir = fs.readdirSync(rootPath);
   const componentsDocMap = {};
   const componentsMap = {};
+  // 生成每一个component对应的文档
   rootDir.forEach(componentName => {
+    // 此处用于处理热更新，即组件代码改变后，通过判断是否是同步模式（isSyncSpecific）与当前所循环的组件是否是已更改的组件（componentName !== target）来决定是否生成新代码
     if (isSyncSpecific) {
       if (componentName !== target) {
         return;
@@ -56,22 +63,33 @@ function generate(target) {
       const debugDemos = new Set();
 
       if (fs.existsSync(demoDirPath)) {
+        /**
+         * 从这里开始真正处理demo文件夹中的代码
+         * demo文件夹下的文件分三种：.md, .ts, module。md用来生成每一个demo的描述，ts用来生成每一个demo的代码，module用来生成该组件下的module.ts文件
+         */
         const demoDir = fs.readdirSync(demoDirPath);
         demoDir.forEach(demo => {
           if (/.md$/.test(demo)) {
             const nameKey = nameWithoutSuffixUtil(demo);
             const demoMarkDownFile = fs.readFileSync(path.join(demoDirPath, demo));
+            /**
+             * {
+             *   meta: { order: 2, title: { 'zh-CN': '中文标题', 'en-US': '英文标题' } },
+             *   zh: '<p>中文描述。</p>\n',
+             *   en: '<p>英文描述</p>\n'
+             *  }
+             */
             const demoMeta = parseDemoMdUtil(demoMarkDownFile);
 
             if (demoMeta.meta.debug && process.env.NODE_ENV !== 'development') {
               debugDemos.add(nameKey);
               return;
             }
-
             demoMap[nameKey] = demoMeta;
             demoMap[nameKey]['name'] = `NzDemo${camelCase(capitalizeFirstLetter(componentName))}${camelCase(
               capitalizeFirstLetter(nameKey)
             )}Component`;
+            // 根据模版文件生成codebox代码
             demoMap[nameKey]['enCode'] = generateCodeBox(
               componentName,
               demoMap[nameKey]['name'],

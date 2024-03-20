@@ -28,4 +28,5 @@ module.exports = function (iframeTargetPath, componentsMap) {
   fs.writeFileSync(path.join(iframeTargetPath, `app.routing.module.ts`), routing);
   fs.writeFileSync(path.join(iframeTargetPath, `app.module.ts`), module);
   fs.writeFileSync(path.join(iframeTargetPath, `ng-zorro-antd.module.ts`), zorroModule);
+  console.log('iframeTargetPath', iframeTargetPath)
 };

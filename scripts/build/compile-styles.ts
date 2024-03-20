@@ -3,6 +3,24 @@
  * found in the LICENSE file at https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/LICENSE
  */
 
+/**
+ * 样式结构
+ * 全部组件样式
+ *  css: "~ng-zorro-antd/ng-zorro-antd.min.css";
+ *  less: "~ng-zorro-antd/ng-zorro-antd.less";
+ * 特定组件样式
+ *  基本样式
+ *    css: "~ng-zorro-antd/style/index.min.css"
+ *    less: "~ng-zorro-antd/style/entry.less"
+ *  组件样式
+ *    css: "~ng-zorro-antd/button/style/index.min.css";
+ *    less: "~ng-zorro-antd/button/style/entry.less";
+ *
+ * 可以看出，entry.less文件为组件样式的入口文件。
+ * 而{组件}/style中的index.less则为组件主要的样式文件，entry是包括index在内的其他相关样式文件的总和。
+ *
+ */
+
 import * as fs from 'fs-extra';
 import * as less from 'less';
 
@@ -49,6 +67,10 @@ async function compileLess(
 const sourcePath = buildConfig.componentsDir;
 const targetPath = buildConfig.publishDir;
 
+/**
+ * 该函数主要将组件中的样式文件先复制到输出目录中，后根据entry.less文件是否与主题文件相关，将主题文件信息（@root-entry-name）写入entry.less文件中。
+ * 后再将其他基础样式复制编译至输出目录中。
+ */
 export async function compile(): Promise<void | void[]> {
   const componentFolders = fs.readdirSync(targetPath);
   const promiseList = [];
