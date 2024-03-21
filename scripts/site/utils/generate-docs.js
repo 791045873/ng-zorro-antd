@@ -9,6 +9,7 @@ const moduleTemplate = String(fs.readFileSync(path.resolve(__dirname, '../templa
 const capitalizeFirstLetter = require('./capitalize-first-letter');
 const camelCase = require('./camelcase');
 
+// 根据doc/{{name}}.md文件生成对应文档
 module.exports = function generateDocs(rootPath, docsMap) {
   const docsPath = `${rootPath}docs`;
   fs.mkdirSync(docsPath);

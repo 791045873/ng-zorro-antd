@@ -35,7 +35,8 @@
               }
             ],
             "styles": [
-              "site/doc/styles.less"
+              "site/doc/styles.less",
+              "./node_modules/ng-zorro-antd/ng-zorro-antd.less"
             ],
             "allowedCommonJsDependencies": [
               "codesandbox",

@@ -1,5 +1,5 @@
 {
-  "name": "ng-zorro-antd",
+  "name": "qqsl-material",
   "version": "0.0.0-NOT-USED",
   "license": "MIT",
   "description": "An enterprise-class UI components based on Ant Design and Angular",
@@ -32,6 +32,7 @@
     "@angular/cdk": "^17.2.0",
     "@ant-design/icons-angular": "^17.0.0",
     "date-fns": "^2.16.1",
+    "ng-zorro-antd": "^17.3.0",
     "ngx-quicklink": "^0.4.2"
   },
   "devDependencies": {

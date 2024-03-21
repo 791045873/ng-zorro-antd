@@ -15,7 +15,6 @@ import { RouterList } from '../router';
       <ng-container *ngIf="page === 'components'">
         <li nz-menu-item nzMatchRouter>
           <a routerLink="components/overview/{{ language }}">
-            <span *ngIf="language === 'en'">Components Overview</span>
             <span *ngIf="language === 'zh'">组件总览</span>
           </a>
         </li>
@@ -24,27 +23,6 @@ import { RouterList } from '../router';
           <ul>
             <ng-container>
               <li nz-menu-item nzMatchRouter *ngFor="let component of group.children">
-                <a routerLink="{{ component.path }}">
-                  <span>{{ component.label }}</span>
-                  <span class="chinese">{{ component.zh }}</span>
-                  <span class="ant-tag ant-tag-warning" style="margin: 0 8px;" *ngIf="!!component.tag">{{ component.tag }}</span>
-                </a>
-              </li>
-            </ng-container>
-          </ul>
-        </li>
-      </ng-container>
-
-      <ng-container *ngIf="page === 'experimental'">
-        <li
-          nz-menu-group
-          *ngFor="let group of routerList.components"
-          [hidden]="group.language !== language || group.experimentalChildren.length === 0"
-          [nzTitle]="group.name"
-        >
-          <ul>
-            <ng-container>
-              <li nz-menu-item nzMatchRouter *ngFor="let component of group.experimentalChildren">
                 <a routerLink="{{ component.path }}">
                   <span>{{ component.label }}</span>
                   <span class="chinese">{{ component.zh }}</span>
