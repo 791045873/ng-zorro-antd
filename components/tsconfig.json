@@ -4,9 +4,9 @@
     "baseUrl": ".",
     "rootDir": ".",
     "paths": {
-      // "ng-zorro-antd/*": [
-      //   "./*"
-      // ]
+      "qqsl-material/*": [
+        "./*"
+      ]
     },
     "alwaysStrict": true,
     "strictFunctionTypes": true

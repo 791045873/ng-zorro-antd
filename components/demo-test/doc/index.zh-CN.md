@@ -12,8 +12,6 @@ cover: https://gw.alipayobjects.com/zos/alicdn/fNUKzY1sk/Button.svg
 
 测试组件
 
-```
-
 ## API
 
 ### [nz-button]:standalone
