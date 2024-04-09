@@ -12,7 +12,7 @@ module.exports = {
         project: ['tsconfig.json'],
         createDefaultProgram: true
       },
-      plugins: ['@typescript-eslint', 'jsdoc', 'import', 'header'],
+      plugins: ['@typescript-eslint', 'jsdoc', 'import'],
       extends: [
         'plugin:@angular-eslint/recommended',
         'plugin:@angular-eslint/template/process-inline-templates',
@@ -20,22 +20,11 @@ module.exports = {
       ],
       rules: {
         'prettier/prettier': ['error', prettierConfig],
-        'header/header': [
-          2,
-          'block',
-          [
-            '*',
-            ' * Use of this source code is governed by an MIT-style license that can be',
-            ' * found in the LICENSE file at https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/LICENSE',
-            ' '
-          ],
-          2
-        ],
         '@angular-eslint/component-selector': [
           'error',
           {
             type: ['element', 'attribute'],
-            prefix: ['nz', 'test'],
+            prefix: ['qqsl', 'test'],
             style: 'kebab-case'
           }
         ],
@@ -49,7 +38,7 @@ module.exports = {
           'error',
           {
             type: 'attribute',
-            prefix: ['nz']
+            prefix: ['qqsl']
           }
         ],
         '@angular-eslint/no-attribute-decorator': 'error',

@@ -215,7 +215,7 @@
       "root": "components",
       "sourceRoot": "components",
       "projectType": "library",
-      "prefix": "nz",
+      "prefix": "qm",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
