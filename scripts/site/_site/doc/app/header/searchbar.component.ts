@@ -28,7 +28,7 @@ declare const docsearch: any;
       #searchInput
       (focus)="triggerFocus(true)"
       (blur)="triggerFocus(false)"
-      [placeholder]="language == 'zh' ? '在 ng.ant.design 中搜索' : 'Search in ng.ant.design'"
+      [placeholder]="language == 'zh' ? '搜索' : ''"
     />
   `,
   host: {

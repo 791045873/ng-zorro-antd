@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { QqslDemoTestComponent } from './demo-test.component';
 
-describe('NzDemoTestComponent', () => {
+describe('QqslDemoTestComponent', () => {
   let component: QqslDemoTestComponent;
   let fixture: ComponentFixture<QqslDemoTestComponent>;
 

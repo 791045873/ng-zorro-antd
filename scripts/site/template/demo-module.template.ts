@@ -11,13 +11,13 @@ import { moduleList } from './module';
     ...moduleList,
     RouterModule.forChild([
       // { path: 'en', component: NzDemo{{component}}EnComponent },
-      { path: 'zh', component: NzDemo{{component}}ZhComponent }
+      { path: 'zh', component: QqslDemo{{component}}ZhComponent }
     ])
   ],
   declarations: [
 {{declarations}}
   ]
 })
-export class NzDemo{{component}}Module {
+export class QqslDemo{{component}}Module {
 
 }

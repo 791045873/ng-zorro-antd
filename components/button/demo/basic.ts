@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'nz-demo-button-basic',
+  selector: 'qqsl-demo-button-basic',
   template: `
     <button nz-button nzType="primary">Primary Button</button>
     <button nz-button nzType="default">Default Button</button>
@@ -18,4 +18,4 @@ import { Component } from '@angular/core';
     `
   ]
 })
-export class NzDemoButtonBasicComponent {}
+export class QqslDemoButtonBasicComponent {}

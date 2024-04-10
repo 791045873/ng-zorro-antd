@@ -26,20 +26,20 @@ function generateDemoModule(content) {
   let imports = '';
   let declarations = '';
   for (const key in demoMap) {
-    const declareComponents = [`NzDemo${componentName(component)}${componentName(key)}Component`];
+    const declareComponents = [`QqslDemo${componentName(component)}${componentName(key)}Component`];
     const entries = retrieveEntryComponents(demoMap[key] && demoMap[key].ts);
     declareComponents.push(...entries);
     imports += `import { ${declareComponents.join(', ')} } from './${key}';\n`;
     declarations += `\t\t${declareComponents.join(',\n\t')},\n`;
   }
-  imports += `import { NzDemo${componentName(component)}ZhComponent } from './zh.component';\n`;
+  imports += `import { QqslDemo${componentName(component)}ZhComponent } from './zh.component';\n`;
   // imports += `import { NzDemo${componentName(component)}EnComponent } from './en.component';\n`;
-  declarations += `\t\tNzDemo${componentName(component)}ZhComponent,\n`;
+  declarations += `\t\tQqslDemo${componentName(component)}ZhComponent,\n`;
   // declarations += `\t\tNzDemo${componentName(component)}EnComponent,\n`;
   if (content.pageDemo) {
-    imports += `import { NzPageDemo${componentName(component)}ZhComponent } from './zh.page.component';\n`;
+    imports += `import { QqslPageDemo${componentName(component)}ZhComponent } from './zh.page.component';\n`;
     // imports += `import { NzPageDemo${componentName(component)}EnComponent } from './en.page.component';\n`;
-    declarations += `\t\tNzPageDemo${componentName(component)}ZhComponent,\n`;
+    declarations += `\t\tQqslPageDemo${componentName(component)}ZhComponent,\n`;
     // declarations += `\t\tNzPageDemo${componentName(component)}EnComponent,\n`;
   }
   return demoModuleTemplate
@@ -53,7 +53,7 @@ function componentName(component) {
 }
 
 function generateComponentName(component, language) {
-  return `NzDemo${componentName(component)}${capitalizeFirstLetter(language)}Component`;
+  return `QqslDemo${componentName(component)}${capitalizeFirstLetter(language)}Component`;
 }
 
 function generatePageDemoComponent(content) {

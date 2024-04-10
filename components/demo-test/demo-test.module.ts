@@ -11,4 +11,4 @@ import { QqslDemoTestComponent } from './demo-test.component';
   imports: [QqslDemoTestComponent],
   exports: [QqslDemoTestComponent]
 })
-export class NzDemoTestnModule {}
+export class QqslDemoTestModule {}

@@ -86,7 +86,7 @@ function generate(target) {
               return;
             }
             demoMap[nameKey] = demoMeta;
-            demoMap[nameKey]['name'] = `NzDemo${camelCase(capitalizeFirstLetter(componentName))}${camelCase(
+            demoMap[nameKey]['name'] = `QqslDemo${camelCase(capitalizeFirstLetter(componentName))}${camelCase(
               capitalizeFirstLetter(nameKey)
             )}Component`;
             // 根据模版文件生成codebox代码

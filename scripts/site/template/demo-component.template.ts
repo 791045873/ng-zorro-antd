@@ -2,7 +2,7 @@ import { Component, QueryList, ViewChildren } from '@angular/core';
 import { NzCodeBoxComponent } from '../share/codebox/codebox.component';
 
 @Component({
-  selector     : 'nz-demo-{{component}}',
+  selector     : 'qqsl-demo-{{component}}',
   preserveWhitespaces: false,
   templateUrl  : './{{language}}.html'
 })

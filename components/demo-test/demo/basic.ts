@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'nz-demo-demo-test-basic',
-  template: ` <nz-demo-test></nz-demo-test>`
+  selector: 'qqsl-demo-demo-test-basic',
+  template: ` <qqsl-demo-test></qqsl-demo-test>`
 })
-export class NzDemoDemoTestBasicComponent {}
+export class QqslDemoDemoTestBasicComponent {}

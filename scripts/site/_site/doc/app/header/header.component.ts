@@ -31,16 +31,16 @@ const RESPONSIVE_SM = 1200;
       ></span>
 
       <div nz-row style="flex-flow: nowrap">
-        <div nz-col [nzXs]="24" [nzSm]="24" [nzMd]="6" [nzLg]="6" [nzXl]="5" [nzXXl]="4">
+        <div nz-col>
           <app-logo></app-logo>
         </div>
         <div nz-col [nzXs]="0" [nzSm]="0" [nzMd]="18" [nzLg]="18" [nzXl]="19" [nzXXl]="20" class="menu-row">
-          <div
+          <!-- <div
             app-searchbar
             [language]="language"
             [responsive]="responsive"
             (focusChange)="onFocusChange($event)"
-          ></div>
+          ></div> -->
           <ng-container *ngIf="!isMobile" [ngTemplateOutlet]="menu"></ng-container>
         </div>
       </div>
@@ -92,7 +92,7 @@ const RESPONSIVE_SM = 1200;
           >
             {{ language == 'zh' ? 'English' : '中文' }}
           </button> -->
-          <button
+          <!-- <button
             nz-button
             nzGhost
             nzSize="small"
@@ -101,7 +101,7 @@ const RESPONSIVE_SM = 1200;
           >
             {{ nextDirection | uppercase }}
           </button>
-          <app-github-btn [responsive]="responsive"></app-github-btn>
+          <app-github-btn [responsive]="responsive"></app-github-btn> -->
         </ng-template>
       </ng-container>
     </ng-template>

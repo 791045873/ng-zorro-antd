@@ -17,11 +17,11 @@ const CNMirrorSite = 'ng-zorro.gitee.io';
         <span>{{ language == 'zh' ? '组件' : 'Components' }}</span>
       </a>
     </li>
-    <li nz-menu-item [nzSelected]="page === 'experimental'">
+    <!-- <li nz-menu-item [nzSelected]="page === 'experimental'">
       <a [routerLink]="['experimental', 'pipes', language]">
         <span>{{ language == 'zh' ? '实验性功能' : 'Experimental' }}</span>
       </a>
-    </li>
+    </li> -->
     <!-- <li *ngIf="showCNMirror && language == 'zh'" nz-menu-item [nzSelected]="false">
       <a href="https://ng-zorro.gitee.io/">国内镜像</a>
     </li> -->
