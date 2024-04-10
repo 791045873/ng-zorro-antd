@@ -5,10 +5,10 @@
 
 import { NgModule } from '@angular/core';
 
-import { NzDemoTestComponent } from './demo-test.component';
+import { QqslDemoTestComponent } from './demo-test.component';
 
 @NgModule({
-  imports: [NzDemoTestComponent],
-  exports: [NzDemoTestComponent]
+  imports: [QqslDemoTestComponent],
+  exports: [QqslDemoTestComponent]
 })
 export class NzDemoTestnModule {}

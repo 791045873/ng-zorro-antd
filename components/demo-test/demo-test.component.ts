@@ -6,12 +6,12 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'nz-demo-test',
-  exportAs: 'nzDemoTest',
+  selector: 'qqsl-demo-test',
+  exportAs: 'qqslDemoTest',
   preserveWhitespaces: false,
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   template: `nz-demo-test works!`,
   standalone: true
 })
-export class NzDemoTestComponent {}
+export class QqslDemoTestComponent {}

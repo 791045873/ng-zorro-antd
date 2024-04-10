@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { NzDemoTestComponent } from './demo-test.component';
+import { QqslDemoTestComponent } from './demo-test.component';
 
 describe('NzDemoTestComponent', () => {
-  let component: NzDemoTestComponent;
-  let fixture: ComponentFixture<NzDemoTestComponent>;
+  let component: QqslDemoTestComponent;
+  let fixture: ComponentFixture<QqslDemoTestComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [NzDemoTestComponent]
+      imports: [QqslDemoTestComponent]
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NzDemoTestComponent);
+    fixture = TestBed.createComponent(QqslDemoTestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
